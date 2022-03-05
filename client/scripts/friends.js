@@ -8,23 +8,16 @@ var Friends = {
   toggleCount: 0,
   // ifToggle: true,
   buttonText: 'Add Friend',
-  _data: ['dennis', 'Dora'],
+  _data: [],
 
-  toggleStatus: function() {
-    //
+  //after we click on username, we add it friends array
+  //iterate through friends array,     then we re-render
 
-    // $username = $('.username');
+  toggleStatus: function(element) {
+    // element.css()
 
-    Friends.toggleCount++;
-    console.log('toggleCount is ', Friends.toggleCount);
-    (Friends.toggleCount % 2 === 0) ? Friends.buttonText = 'Add Friend' : Friends.buttonText = 'Unfriend';
-    console.log('buttonText says: ', Friends.buttonText);
-    //inject html to write out buttonText
 
-    $('.username').text(username + 'friends')
 
-    //if toggleStatus = true -> have the button say Add Friend
-    // click toggleStatus = false - > have button say "unfriend"
   }
   // TODO: Define methods which allow you to add, toggle,
   // and check the friendship status of other users.

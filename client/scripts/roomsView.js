@@ -3,11 +3,14 @@
 
 var RoomsView = {
 
-  $button: $('#rooms button'),
+  $button: $('#rooms button'), //Add Room button
+  $closeButton: $('.roombtn'), //add button
   $select: $('#rooms select'),
   // RoomsView.$select.attr(attribute, 'selectedRooms')
 
   initialize: function() {
+    RoomsView.$button.on('click', RoomsView.handleClick);
+    RoomsView.$closeButton.on('click', RoomsView.closeForm);
     // TODO: Perform any work which needs to be done
     // when this view loads.
   },
@@ -22,8 +25,8 @@ var RoomsView = {
     // TODO: Render out a single room.
     // <option value ="superLobby"> "superLobby" </option>
     var newMessage = Rooms.render({key: roomname});
-    console.log(newMessage);
-    console.log('here');
+    // console.log(newMessage);
+    // console.log('here');
     RoomsView.$select.append(newMessage);
   },
 
@@ -32,7 +35,20 @@ var RoomsView = {
   },
 
   handleClick: function(event) {
+    RoomsView.openForm();
     // TODO: Handle the user clicking the "Add Room" button.
+  },
+
+  openForm: function() {
+    document.getElementById('Addroom').style.display = 'block';
+  },
+
+  closeForm: function(event) {
+    var roomInfo = document.getElementsByClassName('room-name');
+    console.log('roomInfo');
+    RoomsView.renderRoom(roomInfo[0].value);
+    document.getElementById('Addroom').style.display = 'none';
+    event.preventDefault();
   }
 
 };

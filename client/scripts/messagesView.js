@@ -4,20 +4,36 @@
 var MessagesView = {
 
   $chats: $('#chats'),
+  $chat: $('.chat'),
+
   initialize: function() {
-    // TODO: Perform any work which needs to be done
-    // when this view loads.
+    // TODO: Perform any work which needs to be done when this view loads.
+    // MessagesView.$chats.on('click', MessagesView.$chat, MessagesView.handleClick);
+    MessagesView.$chats.on('click', '.username', MessagesView.handleClick);
+
+    // console.log('MessagesView.$chat' + MessagesView.$chat);
   },
 
   render: function(data) {
     //filter Messages._data to just include text and userName
     // console.log(Messages._data);
     // console.log('in render function data', data);
+
+    MessagesView.$chats.html(''); //clear the screen
+
     for (const message of data) {
       // console.log(message);
-      let msgText = message.text;
-      let msgUserName = message.username;
-      let msgRoomName = message.roomname;
+      //if the text has '<script>' as its first characters, then msgText = '' otherwise
+      let msgText = '';
+      if (message.text && message.text.includes('<script>')) {
+        //do nothing
+        console.log('found script');
+        continue; //skip this message
+      } else {
+        msgText = message.text;
+        var msgUserName = message.username;
+        var msgRoomName = message.roomname;
+      }
 
       MessagesView.renderMessage({
         username: msgUserName,
@@ -41,9 +57,27 @@ var MessagesView = {
 
   // <div id = "chats">
 
+
   handleClick: function(event) {
-    // TODO: handle a user clicking on a message
-    // (this should add the sender to the user's friend list).
+    console.log('clicked');
+    // let userName = $(event.target).text();
+    let userName = event.currentTarget.textContent;
+    //grab username when clicked
+    // console.log('username is', userName);
+    // console.log(event.currentTarget.nextSibling);
+    console.log(event.currentTarget.nextSibling.nextSibling);
+    $(event.currentTarget.nextSibling.nextSibling).css('background-color', 'yellow');
+    // console.log(event.currentTarget.lastChild);
+
+    console.log($(`${userName}`));
+    // console.log('Friends._data is', Friends._data);
   }
+
+  // TODO: handle a user clicking on a message
+  // (this should add the sender to the user's friend list).
+  //if class chat is clicked then we want to get the
+  //grab the value inside class username
+  //send that to friends.js - > storage array
+
 
 };

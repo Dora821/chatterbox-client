@@ -29,23 +29,3 @@ var Messages = {
 
 };
 
-
-//Send example message to server
-// $.ajax({
-//   // This is the url you should use to communicate with the API server.
-//   url: 'https://app-hrsei-api.herokuapp.com/api/chatterbox/messages/rfp',
-//   type: 'POST',
-//   data: JSON.stringify({
-//   username: 'dragonboi',
-//   text: 'get crazy with the cheese whiz',
-//   roomname: 'superLobby'
-// }),
-//   contentType: 'application/json',
-//   success: function (data) {
-//     console.log('chatterbox: Message sent');
-//   },
-//   error: function (data) {
-//     // See: https://developer.mozilla.org/en-US/docs/Web/API/console.error
-//     console.error('chatterbox: Failed to send message', data);
-//   }
-// });

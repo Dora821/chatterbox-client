@@ -22,9 +22,10 @@ var App = {
   },
 
   fetch: function(callback = ()=>{}) {
+    // console.log('fetching');
     Parse.readAll((data) => {
       Messages.update(data);
-      console.log(data);
+      // console.log(data);
     });
   },
 

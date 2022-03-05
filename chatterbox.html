@@ -29,11 +29,18 @@
         Room:
         <select id="selectedRoom">  </select>
         <button>Add Room</button>
+      <div class="form-popup" id="Addroom">
+        <form class="form-container">
+          <label for="Room"></label>
+          <input type="text" class="room-name" placeholder="Enter RoomName" required />
+          <button class="roombtn">Add</button>
+        </form>
       </div>
       <form action="#" id="send" method="post">
         <input type="text" name="message" id="message"/>
         <input type="submit" name="submit" class="submit"/>
       </form>
+
     </div>
     <div id="chats"></div>
     <script src="client/env/config.js"></script>
