@@ -5,6 +5,7 @@ var RoomsView = {
 
   $button: $('#rooms button'),
   $select: $('#rooms select'),
+  // RoomsView.$select.attr(attribute, 'selectedRooms')
 
   initialize: function() {
     // TODO: Perform any work which needs to be done
@@ -13,6 +14,8 @@ var RoomsView = {
 
   render: function() {
     // TODO: Render out the list of rooms.
+    //when you initialize the app, populate the dropdown menu with the name of all the rooms, in the messages.js or data, find all unique rooms, store them in an array, then go through and put them into the umenu.
+
   },
 
   renderRoom: function(roomname) {

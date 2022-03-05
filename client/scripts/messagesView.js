@@ -33,12 +33,13 @@ var MessagesView = {
   },
 
   renderMessage: function(message) {
-    console.log('in MessagesView.renderMessage');
-
-    var newMessage = MessageView.render({key: `<p class = message> ${message.text} <p>`, username: message.username});
+    // console.log('in MessagesView.renderMessage');
+    var newMessage = MessageView.render({key: message.text, username: message.username});
     // console.log(newMessage);
     MessagesView.$chats.append(newMessage);
   },
+
+  // <div id = "chats">
 
   handleClick: function(event) {
     // TODO: handle a user clicking on a message

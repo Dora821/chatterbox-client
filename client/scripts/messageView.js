@@ -12,11 +12,9 @@ var MessageView = {
   render: _.template(`
       <div class="chat">
         <div class="username <%=username%>"> <%=username%> </div>
-        <%=key %>
-        <div></div>
+        <p class="<%=key%>"> <%=key%> </p>
       </div>
 
     `)
-
 };
 // console.log(MessageView.render({message: "I am tired"}));

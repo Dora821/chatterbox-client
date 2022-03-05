@@ -12,7 +12,7 @@ var Messages = {
   _data: null,
 
   update: function (data) {
-    console.log('Messages.update called');
+    // console.log('Messages.update called');
     Messages._data = data;
     // console.log('inside update messages._data is ', Messages._data);
     //get it show up on the screen - > re-render;
