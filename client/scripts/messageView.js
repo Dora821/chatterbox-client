@@ -5,13 +5,18 @@ var MessageView = {
   // Learn more about Underscore's templating capability
   // here: https://underscorejs.org/#template.
   // TODO: Update this template accordingly.
+
+
+  // render({ //substitute for message});
+
   render: _.template(`
-      <!--
       <div class="chat">
-        <div class="username"></div>
+        <div class="username <%=username%>"> <%=username%> </div>
+        <%=key %>
         <div></div>
       </div>
-      -->
+
     `)
 
 };
+// console.log(MessageView.render({message: "I am tired"}));

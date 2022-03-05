@@ -17,6 +17,11 @@ var RoomsView = {
 
   renderRoom: function(roomname) {
     // TODO: Render out a single room.
+    // <option value ="superLobby"> "superLobby" </option>
+    var newMessage = Rooms.render({key: roomname});
+    console.log(newMessage);
+    console.log('here');
+    RoomsView.$select.append(newMessage);
   },
 
   handleChange: function(event) {
